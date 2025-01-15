@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Will You Be Mine, Bino?</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Arial", sans-serif;
+        background: linear-gradient(to bottom, #ffafbd, #ffc3a0);
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      h1 {
+        font-size: 3rem;
+        color: #fff;
+        text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        animation: fadeIn 3s ease-in-out;
+      }
+
+      p {
+        font-size: 1.5rem;
+        color: #fff;
+        margin: 20px 0;
+        animation: slideIn 2s ease-in-out;
+      }
+
+      .heart {
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: relative;
+        transform: rotate(-45deg);
+        animation: beat 1s infinite;
+        margin-top: 20px; /* Move the heart 20px down */
+      }
+
+      .heart::before,
+      .heart::after {
+        content: "";
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: absolute;
+        border-radius: 50%;
+      }
+
+      .heart::before {
+        top: -50px;
+        left: 0;
+      }
+
+      .heart::after {
+        left: 50px;
+        top: 0;
+      }
+
+      button {
+        margin-top: 30px;
+        padding: 15px 30px;
+        font-size: 1.2rem;
+        color: #fff;
+        background: #ff6f61;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s;
+      }
+
+      button:hover {
+        transform: scale(1.1);
+      }
+
+      @keyframes beat {
+        0%,
+        100% {
+          transform: scale(1) rotate(-45deg);
+        }
+        50% {
+          transform: scale(1.2) rotate(-45deg);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translateY(50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .message {
+        display: none;
+        font-size: 1.5rem;
+        color: #fff;
+        margin-top: 20px;
+        animation: fadeIn 2s ease-in-out;
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        p {
+          font-size: 1.2rem;
+        }
+
+        .heart {
+          width: 80px;
+          height: 80px;
+        }
+
+        .heart::before,
+        .heart::after {
+          width: 80px;
+          height: 80px;
+        }
+
+        button {
+          padding: 10px 20px;
+          font-size: 1rem;
+        }
+
+        .message {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Hello Bino,</h1>
+      <p>
+        Since the moment I met you, my world has been brighter. Today, I have
+        just one question for you:
+      </p>
+      <div class="heart"></div>
+      <button onclick="revealMessage()">Will You Be Mine?</button>
+      <p class="message">
+        You are the most beautiful chapter of my life, Bino. Let's make our
+        story eternal! ❤
+      </p>
+    </div>
+
+    <script>
+      function revealMessage() {
+        const message = document.querySelector(".message");
+        message.style.display = "block";
+      }
+    </script>
+  </body>
+</html>
